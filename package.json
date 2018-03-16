@@ -1,0 +1,30 @@
+{
+  "name": "jobby-api",
+  "version": "0.1.0",
+  "description": "API servidor",
+  "main": "server.js",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "debug": "^3.1.0",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2",
+    "standard": "^11.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "SET NODE_ENV=production && node server.js",
+    "start": "SET NODE_ENV=production && nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nobitco/jobby-api.git"
+  },
+  "author": "Jesus Marquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nobitco/jobby-api/issues"
+  },
+  "homepage": "https://github.com/nobitco/jobby-api#readme"
+}
