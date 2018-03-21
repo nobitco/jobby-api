@@ -1,17 +1,20 @@
 'use strict'
 
+const faker = require('faker')
+
 const practicante = {
   id: 1,
-  nombres: 'Maria Alejandra',
-  apellidos: 'Martinez Usea',
-  email: 'maria.martinez@ulc.edu.co'
+  nombres: faker.name.firstName(),
+  apellidos: faker.name.lastName(),
+  email: faker.internet.email(),
+  telefono: faker.phone.phoneNumber()
 }
 
 const practicantes = [
   practicante,
-  extend(practicante, { id: 2, nombres: 'David Alberto', apellidos: 'Acevedo Marquez', email: 'david.acevedo@ulc.edu.co' }),
-  extend(practicante, { id: 3, nombres: 'Ana', apellidos: 'Peres Olome', email: 'ana.perez@ulc.edu.co' }),
-  extend(practicante, { id: 4, nombres: 'Luz Dina', apellidos: 'Villaquiran', email: 'luz.villa@ulc.edu.co' })
+  extend(practicante, { id: 2, nombres: faker.name.firstName(), apellidos: faker.name.lastName(), email: faker.internet.email() }),
+  extend(practicante, { id: 3, nombres: faker.name.firstName(), apellidos: faker.name.lastName(), email: faker.internet.email() }),
+  extend(practicante, { id: 4, nombres: faker.name.firstName(), apellidos: faker.name.lastName(), email: faker.internet.email() })
 ]
 
 function extend (obj, values) {
