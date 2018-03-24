@@ -35,6 +35,32 @@ const entregas = [
   extend(entrega, { id: 4, nombre: 'actividad d', fechaEntrega: fecha4.toDateString() })
 ]
 
+var hoy = Date.now()
+
+var fechaEntrega1 = new Date(2018, 0, 30)
+var transcurrido = hoy - fechaEntrega1
+var diasVencido1 = Math.trunc(transcurrido / 86400000)
+
+const entregaVencida1 = {
+  nombre: 'actividad 20',
+  fechaEntrega: fechaEntrega1.toDateString(),
+  diasVencidos: diasVencido1
+}
+
+var fechaEntrega2 = new Date(2018, 1, 15)
+transcurrido = hoy - fechaEntrega2
+var diasVencido2 = Math.trunc(transcurrido / 86400000)
+
+var fechaEntrega3 = new Date(2018, 2, 5)
+transcurrido = hoy - fechaEntrega3
+var diasVencido3 = Math.trunc(transcurrido / 86400000)
+
+const entregasVencidas = [
+  entregaVencida1,
+  extend(entregaVencida1, { nombre: 'actividad 10', fechaEntrega: fechaEntrega2.toDateString(), diasVencidos: diasVencido2 }),
+  extend(entregaVencida1, { nombre: 'actividad 50', fechaEntrega: fechaEntrega3.toDateString(), diasVencidos: diasVencido3 })
+]
+
 function extend (obj, values) {
   const clone = Object.assign({}, obj)
 
@@ -45,5 +71,7 @@ module.exports = {
   single: practicante,
   all: practicantes,
   entrega: entrega,
-  entregas: entregas
+  entregas: entregas,
+  entregaVencida: entregaVencida1,
+  entregasVencidas: entregasVencidas
 }

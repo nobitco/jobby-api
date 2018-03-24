@@ -22,4 +22,9 @@ api.get('/entregas', (req, res) => {
   res.send(JSON.stringify(practicantesFixtures.entregas))
 })
 
+api.get('/entregas-vencidas', (req, res) => {
+  debug('GET entregas')
+  res.send(JSON.stringify(practicantesFixtures.entregasVencidas))
+})
+
 module.exports = api
