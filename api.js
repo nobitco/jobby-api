@@ -8,7 +8,8 @@ const practicantesFixtures = require('./tests/fixtures/practicantes')
 
 api.get('/practicantes', (req, res) => {
   debug('get practicantes')
-  res.send(JSON.stringify(practicantesFixtures.all))
+  //res.send(JSON.stringify(practicantesFixtures.all))
+  res.send({})
 })
 
 module.exports = api

@@ -9,13 +9,15 @@
     "express": "^4.16.3"
   },
   "devDependencies": {
+    "ava": "^0.25.0",
     "faker": "^4.1.0",
     "nodemon": "^1.17.2",
-    "standard": "^11.0.1"
+    "standard": "^11.0.1",
+    "supertest": "^3.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "DEBUG=platziverse:* nodemon  server.js",
+    "test": "DEBUG=jobby:* ava tests/ --verbose",
+    "start-dev": "DEBUG=jobby:* nodemon server.js",
     "start": "NODE_ENV=production node server.js",
     "lint": "standard"
   },
