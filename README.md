@@ -19,5 +19,5 @@ POST /api/{universidad}/tutor
 
 1. Clone
 2. Instalar paquetes
-3. npm start-dev
+3. npm run start-dev
 4. Y consuma!
