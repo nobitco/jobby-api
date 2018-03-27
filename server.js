@@ -5,9 +5,10 @@ const express = require('express')
 const chalk = require('chalk')
 const debug = require('debug')('platziverse:api')
 const api = require('./api')
+const asyncify = require('express-asyncify')
 
 const port = process.env.PORT || 3000
-const app = express()
+const app = asyncify(express())
 const server = http.createServer(app)
 
 app.use('/api', api)

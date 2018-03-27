@@ -6,7 +6,9 @@
   "dependencies": {
     "chalk": "^2.3.2",
     "debug": "^3.1.0",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "express-asyncify": "^1.0.0",
+    "jobby-bdsql": "file:../jobby-bdsql"
   },
   "devDependencies": {
     "ava": "^0.25.0",
