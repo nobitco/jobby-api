@@ -2,6 +2,12 @@
 
 const faker = require('faker')
 
+// Retorna un entero aleatorio entre min (incluido) y max (excluido)
+// ¡Usando Math.round() te dará una distribución no-uniforme!
+function getRandomInt (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min
+}
+
 const practicante = {
   id: 1,
   nombres: faker.name.firstName(),
@@ -10,12 +16,24 @@ const practicante = {
   telefono: faker.phone.phoneNumber()
 }
 
-const practicantes = [
-  practicante,
-  extend(practicante, { id: 2, nombres: faker.name.firstName(), apellidos: faker.name.lastName(), email: faker.internet.email() }),
-  extend(practicante, { id: 3, nombres: faker.name.firstName(), apellidos: faker.name.lastName(), email: faker.internet.email() }),
-  extend(practicante, { id: 4, nombres: faker.name.firstName(), apellidos: faker.name.lastName(), email: faker.internet.email() })
-]
+// generamos un arreglo con N practicantes
+let practicanterm = {}
+let practicantes = []
+
+practicantes.push(practicante)
+
+let nTotal = getRandomInt(5, 30)
+
+for (let i = 2; i <= nTotal; i++) {
+  practicanterm = {
+    id: i,
+    nombres: faker.name.firstName(),
+    apellidos: faker.name.lastName(),
+    email: faker.internet.email(),
+    telefono: faker.phone.phoneNumber()
+  }
+  practicantes.push(practicanterm)
+}
 
 var fecha1 = new Date(faker.date.future())
 var fecha2 = new Date(faker.date.future())
