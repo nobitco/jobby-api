@@ -35,29 +35,39 @@ for (let i = 2; i <= nTotal; i++) {
   practicantes.push(practicanterm)
 }
 
-var fecha1 = new Date(faker.date.future())
-var fecha2 = new Date(faker.date.future())
-var fecha3 = new Date(faker.date.future())
-var fecha4 = new Date(faker.date.future())
+// generar un arreglo N de objetos entregas
+
+let fecha
+fecha = new Date(faker.date.future())
 
 const entrega = {
   id: 1,
   nombre: 'informe a',
-  fechaEntrega: fecha1.toDateString()
+  fechaEntrega: fecha.toDateString()
 }
 
-const entregas = [
-  entrega,
-  extend(entrega, { id: 2, nombre: 'actividad b', fechaEntrega: fecha2.toDateString() }),
-  extend(entrega, { id: 3, nombre: 'actividad c', fechaEntrega: fecha3.toDateString() }),
-  extend(entrega, { id: 4, nombre: 'actividad d', fechaEntrega: fecha4.toDateString() })
-]
+let entregarm = {}
+let entregas = []
+
+entregas.push(entrega)
+
+nTotal = getRandomInt(3, 10)
+
+for (let i = 2; i <= nTotal; i++) {
+  fecha = new Date(faker.date.future())
+  entregarm = {
+    id: i,
+    nombre: 'informe a',
+    fechaEntrega: fecha.toDateString()
+  }
+  entregas.push(entregarm)
+}
 
 var hoy = Date.now()
 
 var fechaEntrega1 = new Date(2018, 0, 30)
 var transcurrido = hoy - fechaEntrega1
-var diasVencido1 = Math.trunc(transcurrido / 86400000)
+var diasVencido1 = Math.trunc(transcurrido / 86400000) // milisegundos
 
 const entregaVencida1 = {
   nombre: 'actividad 20',
