@@ -98,6 +98,18 @@ for (let i = 2; i <= nTotal; i++) {
   entregasVencidas.push(entregaVencidarm)
 }
 
+entregasVencidas.sort(function compareNumbers (a,b) {
+  if (a.diasVencidos > b.diasVencidos) {
+    return -1
+  }
+
+  if (a.diasVencidos < b.diasVencidos) {
+    return 1
+  }
+
+  return 0
+})
+
 module.exports = {
   single: practicante,
   all: practicantes,
