@@ -71,7 +71,18 @@ for (let i = 2; i <= nTotal; i++) {
   }
   entregas.push(entregarm)
 }
+// ordenar
+entregas.sort(function compareNumbers (a, b) {
+  if (a.diasVencimiento > b.diasVencimiento) {
+    return 1
+  }
 
+  if (a.diasVencimiento < b.diasVencimiento) {
+    return -1
+  }
+
+  return 0
+})
 // generar entregas vencidas
 
 var fechaVencida = new Date(faker.date.past())
