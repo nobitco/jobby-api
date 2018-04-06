@@ -63,36 +63,39 @@ for (let i = 2; i <= nTotal; i++) {
   entregas.push(entregarm)
 }
 
+// generar entregas vencidas
 var hoy = Date.now()
 
-var fechaEntrega1 = new Date(2018, 0, 30)
-var transcurrido = hoy - fechaEntrega1
-var diasVencido1 = Math.trunc(transcurrido / 86400000) // milisegundos
+var fechaVencida = new Date(faker.date.past())
+var transcurrido = hoy - fechaVencida
+var diasVencido = Math.trunc(transcurrido / 86400000) // milisegundos
 
-const entregaVencida1 = {
+const entregaVencida = {
+  id: 1,
   nombre: 'actividad 20',
-  fechaEntrega: fechaEntrega1.toDateString(),
-  diasVencidos: diasVencido1
+  fechaEntrega: fechaVencida.toDateString(),
+  diasVencidos: diasVencido
 }
 
-var fechaEntrega2 = new Date(2018, 1, 15)
-transcurrido = hoy - fechaEntrega2
-var diasVencido2 = Math.trunc(transcurrido / 86400000)
+let entregasVencidas = []
+let entregaVencidarm = {}
 
-var fechaEntrega3 = new Date(2018, 2, 5)
-transcurrido = hoy - fechaEntrega3
-var diasVencido3 = Math.trunc(transcurrido / 86400000)
+entregasVencidas.push(entregaVencida)
 
-const entregasVencidas = [
-  entregaVencida1,
-  extend(entregaVencida1, { nombre: 'actividad 10', fechaEntrega: fechaEntrega2.toDateString(), diasVencidos: diasVencido2 }),
-  extend(entregaVencida1, { nombre: 'actividad 50', fechaEntrega: fechaEntrega3.toDateString(), diasVencidos: diasVencido3 })
-]
+nTotal = getRandomInt(3, 10)
 
-function extend (obj, values) {
-  const clone = Object.assign({}, obj)
+for (let i = 2; i <= nTotal; i++) {
+  fechaVencida = new Date(faker.date.past())
+  transcurrido = hoy - fechaVencida
+  diasVencido = Math.trunc(transcurrido / 86400000) // milisegundos
 
-  return Object.assign(clone, values)
+  entregaVencidarm = {
+    id: i,
+    nombre: 'informe a',
+    fechaEntrega: fechaVencida.toDateString(),
+    diasVencidos: diasVencido
+  }
+  entregasVencidas.push(entregaVencidarm)
 }
 
 module.exports = {
@@ -100,6 +103,6 @@ module.exports = {
   all: practicantes,
   entrega: entrega,
   entregas: entregas,
-  entregaVencida: entregaVencida1,
+  entregaVencida: entregaVencida,
   entregasVencidas: entregasVencidas
 }
