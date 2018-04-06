@@ -10,6 +10,10 @@ GET /api/{universidad}/tutores
 
 GET /api/{universidad}/practicante/{cedula-identidad}
 
+GET /api/{universidad}/entregas
+
+GET /api/{universidad}/entregas-vencidas
+
 ### POST
 POST /api/{universidad}/practicante
 
