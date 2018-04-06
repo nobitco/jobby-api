@@ -35,15 +35,20 @@ for (let i = 2; i <= nTotal; i++) {
   practicantes.push(practicanterm)
 }
 
-// generar un arreglo N de objetos entregas
+var hoy = Date.now()
 
-let fecha
-fecha = new Date(faker.date.future())
+// generar un arreglo N de objetos entregas
+let fechaEntrega
+fechaEntrega = new Date(faker.date.future())
+
+var transcurrido = fechaEntrega - hoy
+var diasVencimiento = Math.trunc(transcurrido / 86400000) // milisegundos
 
 const entrega = {
   id: 1,
   nombre: 'informe a',
-  fechaEntrega: fecha.toDateString()
+  fechaEntrega: fechaEntrega.toDateString(),
+  diasVencimiento: diasVencimiento
 }
 
 let entregarm = {}
@@ -54,20 +59,23 @@ entregas.push(entrega)
 nTotal = getRandomInt(3, 10)
 
 for (let i = 2; i <= nTotal; i++) {
-  fecha = new Date(faker.date.future())
+  fechaEntrega = new Date(faker.date.future())
+  transcurrido = fechaEntrega - hoy
+  diasVencimiento = Math.trunc(transcurrido / 86400000) // milisegundos
+
   entregarm = {
     id: i,
     nombre: 'informe a',
-    fechaEntrega: fecha.toDateString()
+    fechaEntrega: fechaEntrega.toDateString(),
+    diasVencimiento: diasVencimiento
   }
   entregas.push(entregarm)
 }
 
 // generar entregas vencidas
-var hoy = Date.now()
 
 var fechaVencida = new Date(faker.date.past())
-var transcurrido = hoy - fechaVencida
+transcurrido = hoy - fechaVencida
 var diasVencido = Math.trunc(transcurrido / 86400000) // milisegundos
 
 const entregaVencida = {
@@ -98,7 +106,7 @@ for (let i = 2; i <= nTotal; i++) {
   entregasVencidas.push(entregaVencidarm)
 }
 
-entregasVencidas.sort(function compareNumbers (a,b) {
+entregasVencidas.sort(function compareNumbers (a, b) {
   if (a.diasVencidos > b.diasVencidos) {
     return -1
   }
