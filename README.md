@@ -12,7 +12,15 @@ GET /api/{universidad}/practicante/{cedula-identidad}
 
 GET /api/{universidad}/entregas
 
-GET /api/{universidad}/entregas-vencidas
+#### GET /api/{universidad}/entregas-vencidas
+
+Respuesta: una lista JSON:
+
+* `id` (String) Identificador unico de la entrega
+* `nombre` (String) Nombre de la entrega
+* `fechaEntrega` (String) Fecha de la entrega
+* `diasVencidos` (String) Días transcurridos desde la entrega
+
 
 ### POST
 POST /api/{universidad}/practicante
