@@ -7,7 +7,7 @@ WEB Services para jobby
 
 GET /api/{universidad}/practicante/{cedula-identidad}
 
-#### GET /api/{universidad}/next-assigments
+#### GET /api/{universidad}/next-assignments
 
 Respuesta JSON
 
@@ -19,7 +19,7 @@ Respuesta JSON
 * `deliveryDate` (String) Fecha de la entrega
 * `deliveryDays` (String) Número de días para la entrega
 
-#### GET /api/{universidad}/expired-assigments
+#### GET /api/{universidad}/expired-assignments
 
 Respuesta JSON
 
