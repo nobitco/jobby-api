@@ -14,21 +14,27 @@ GET /api/{universidad}/practicante/{cedula-identidad}
 
 #### GET /api/{universidad}/entregas-proximas
 
+Respuesta JSON
+
 * `id` (String) Identificador unico de la entrega
 * `username` (String) Identificador unico del usuario
 * `role` (String) Rol del usuario
 * `avatar` (String) URL foto
 * `nombre` (String) Nombre de la entrega
 * `fechaEntrega` (String) Fecha de la entrega
+* `diasVencimiento` (String) Número de días para la entrega
 
 #### GET /api/{universidad}/entregas-vencidas
 
-Respuesta: una lista JSON:
+Respuesta JSON
 
 * `id` (String) Identificador unico de la entrega
+* `username` (String) Identificador unico del usuario
+* `role` (String) Rol del usuario
+* `avatar` (String) URL foto
 * `nombre` (String) Nombre de la entrega
 * `fechaEntrega` (String) Fecha de la entrega
-* `diasVencidos` (String) Días transcurridos desde la entrega
+* `diasVencimiento` (String) Número de días vencidos
 
 
 ### POST
