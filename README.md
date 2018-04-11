@@ -4,15 +4,10 @@ WEB Services para jobby
 
 ## Routes
 ### GET
-GET /api/{universidad}/practicantes/entregas-proximas
-
-GET /api/{universidad}/practicantes/entregas-vencidas
-
-GET /api/{universidad}/tutores/
 
 GET /api/{universidad}/practicante/{cedula-identidad}
 
-#### GET /api/{universidad}/entregas-proximas
+#### GET /api/{universidad}/next-assigments
 
 Respuesta JSON
 
@@ -20,11 +15,11 @@ Respuesta JSON
 * `username` (String) Identificador unico del usuario
 * `role` (String) Rol del usuario
 * `avatar` (String) URL foto
-* `nombre` (String) Nombre de la entrega
-* `fechaEntrega` (String) Fecha de la entrega
-* `diasVencimiento` (String) Número de días para la entrega
+* `name` (String) Nombre de la entrega
+* `deliveryDate` (String) Fecha de la entrega
+* `deliveryDays` (String) Número de días para la entrega
 
-#### GET /api/{universidad}/entregas-vencidas
+#### GET /api/{universidad}/expired-assigments
 
 Respuesta JSON
 
@@ -32,9 +27,9 @@ Respuesta JSON
 * `username` (String) Identificador unico del usuario
 * `role` (String) Rol del usuario
 * `avatar` (String) URL foto
-* `nombre` (String) Nombre de la entrega
-* `fechaEntrega` (String) Fecha de la entrega
-* `diasVencimiento` (String) Número de días vencidos
+* `name` (String) Nombre de la entrega
+* `expiredDate` (String) Fecha de la entrega
+* `expiredDays` (String) Número de días vencidos
 
 
 ### POST
