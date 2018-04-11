@@ -6,6 +6,7 @@ const express = require('express')
 const api = express.Router()
 const practicantesFixtures = require('./tests/fixtures/practicantes')
 const usuariosFixtures = require('./tests/fixtures/usuarios')
+const assignmentsFixtures = require('./tests/fixtures/assigments')
 
 api.get('/practicantes', (req, res) => {
   debug('get practicantes')
@@ -17,14 +18,14 @@ api.get('/usuario', (req, res) => {
   res.send(JSON.stringify(usuariosFixtures.single))
 })
 
-api.get('/entregas-proximas', (req, res) => {
-  debug('GET entregas')
-  res.send(JSON.stringify(practicantesFixtures.entregas))
+api.get('/next-assigments', (req, res) => {
+  debug('GET next-assigments')
+  res.send(JSON.stringify(assignmentsFixtures.nextAssigments))
 })
 
-api.get('/entregas-vencidas', (req, res) => {
-  debug('GET entregas')
-  res.send(JSON.stringify(practicantesFixtures.entregasVencidas))
+api.get('/expired-assigments', (req, res) => {
+  debug('GET expired-assigments')
+  res.send(JSON.stringify(assignmentsFixtures.expiredAssigments))
 })
 
 module.exports = api
