@@ -17,7 +17,7 @@ api.get('/usuario', (req, res) => {
   res.send(JSON.stringify(usuariosFixtures.single))
 })
 
-api.get('/entregas', (req, res) => {
+api.get('/entregas-proximas', (req, res) => {
   debug('GET entregas')
   res.send(JSON.stringify(practicantesFixtures.entregas))
 })
