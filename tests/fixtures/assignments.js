@@ -12,7 +12,7 @@ var roles = ['practicante', 'tutor_academico', 'tutor_empresarial']
 var idRole
 var today = Date.now()
 
-// generate a array N assigments objects
+// generate a array N assignments objects
 
 let deliveryDate
 deliveryDate = new Date(faker.date.future())
@@ -22,7 +22,7 @@ var deliveryDays = Math.trunc(deliveryTime / 86400000) // milisegundos
 
 idRole = getRandomInt(1, 3)
 
-const assigment = {
+const assignment = {
   id: 1,
   username: faker.internet.userName(),
   role: roles[idRole],
@@ -32,10 +32,10 @@ const assigment = {
   deliveryDays: deliveryDays
 }
 
-let assigmentrm = {}
-let nextAssigments = []
+let assignmentrm = {}
+let nextAssignments = []
 
-nextAssigments.push(assigment)
+nextAssignments.push(assignment)
 
 let nTotal = getRandomInt(15, 60)
 
@@ -44,7 +44,7 @@ for (let i = 2; i <= nTotal; i++) {
   deliveryTime = deliveryDate - today
   deliveryDays = Math.trunc(deliveryTime / 86400000) // milisegundos
 
-  assigmentrm = {
+  assignmentrm = {
     id: i,
     username: faker.internet.userName(),
     role: roles[idRole],
@@ -53,10 +53,10 @@ for (let i = 2; i <= nTotal; i++) {
     deliveryDate: deliveryDate.toDateString(),
     deliveryDays: deliveryDays
   }
-  nextAssigments.push(assigmentrm)
+  nextAssignments.push(assignmentrm)
 }
 // ordenar
-nextAssigments.sort(function compareNumbers (a, b) {
+nextAssignments.sort(function compareNumbers (a, b) {
   if (a.deliveryDays > b.deliveryDays) {
     return 1
   }
@@ -68,13 +68,13 @@ nextAssigments.sort(function compareNumbers (a, b) {
   return 0
 })
 
-// generate array N objects expired assigments
+// generate array N objects expired assignments
 
 var expiredDate = new Date(faker.date.past())
 let expiredTime = today - expiredDate
 var expiredDays = Math.trunc(expiredTime / 86400000) // milisegundos
 
-const expiredAssigment = {
+const expiredAssignment = {
   id: 1,
   username: faker.internet.userName(),
   role: roles[idRole],
@@ -84,10 +84,10 @@ const expiredAssigment = {
   expiredDays: expiredDays
 }
 
-let expiredAssigments = []
-let expiredAssigmentrm = {}
+let expiredAssignments = []
+let expiredAssignmentrm = {}
 
-expiredAssigments.push(expiredAssigment)
+expiredAssignments.push(expiredAssignment)
 
 nTotal = getRandomInt(20, 80)
 
@@ -96,7 +96,7 @@ for (let i = 2; i <= nTotal; i++) {
   expiredTime = today - expiredDate
   expiredDays = Math.trunc(expiredTime / 86400000) // milisegundos
 
-  expiredAssigmentrm = {
+  expiredAssignmentrm = {
     id: i,
     username: faker.internet.userName(),
     role: roles[idRole],
@@ -105,10 +105,10 @@ for (let i = 2; i <= nTotal; i++) {
     expiredDate: expiredDate.toDateString(),
     expiredDays: expiredDays
   }
-  expiredAssigments.push(expiredAssigmentrm)
+  expiredAssignments.push(expiredAssignmentrm)
 }
 
-expiredAssigments.sort(function compareNumbers (a, b) {
+expiredAssignments.sort(function compareNumbers (a, b) {
   if (a.expiredDays > b.expiredDays) {
     return -1
   }
@@ -121,7 +121,7 @@ expiredAssigments.sort(function compareNumbers (a, b) {
 })
 
 module.exports = {
-  single: assigment,
-  nextAssigments: nextAssigments,
-  expiredAssigments: expiredAssigments
+  single: assignment,
+  nextAssignments: nextAssignments,
+  expiredAssignments: expiredAssignments
 }
