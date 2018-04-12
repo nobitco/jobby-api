@@ -8,7 +8,7 @@ function getRandomInt (min, max) {
   return Math.floor(Math.random() * (max - min)) + min
 }
 
-var roles = ['practicante', 'tutor_academico', 'tutor_empresarial']
+var roles = ['practicante', 'tutor', 'jefe']
 var idRole
 var today = Date.now()
 
@@ -20,7 +20,7 @@ deliveryDate = new Date(faker.date.future())
 var deliveryTime = deliveryDate - today
 var deliveryDays = Math.trunc(deliveryTime / 86400000) // milisegundos
 
-idRole = getRandomInt(1, 3)
+idRole = getRandomInt(0, 3)
 
 const assignment = {
   id: 1,
@@ -37,12 +37,13 @@ let nextAssignments = []
 
 nextAssignments.push(assignment)
 
-let nTotal = getRandomInt(15, 60)
+let nTotal = getRandomInt(15, 80)
 
 for (let i = 2; i <= nTotal; i++) {
   deliveryDate = new Date(faker.date.future())
   deliveryTime = deliveryDate - today
   deliveryDays = Math.trunc(deliveryTime / 86400000) // milisegundos
+  idRole = getRandomInt(0, 3)
 
   assignmentrm = {
     id: i,
@@ -79,7 +80,7 @@ const expiredAssignment = {
   username: faker.internet.userName(),
   role: roles[idRole],
   avatar: faker.image.avatar(),
-  nombre: 'Activity ' + faker.random.word(),
+  name: 'Activity ' + faker.random.word(),
   expiredDate: expiredDate.toDateString(),
   expiredDays: expiredDays
 }
@@ -89,19 +90,20 @@ let expiredAssignmentrm = {}
 
 expiredAssignments.push(expiredAssignment)
 
-nTotal = getRandomInt(20, 80)
+nTotal = getRandomInt(20, 100)
 
 for (let i = 2; i <= nTotal; i++) {
   expiredDate = new Date(faker.date.past())
   expiredTime = today - expiredDate
   expiredDays = Math.trunc(expiredTime / 86400000) // milisegundos
+  idRole = getRandomInt(0, 3)
 
   expiredAssignmentrm = {
     id: i,
     username: faker.internet.userName(),
     role: roles[idRole],
     avatar: faker.image.avatar(),
-    nombre: 'Activity ' + faker.random.word(),
+    name: 'Activity ' + faker.random.word(),
     expiredDate: expiredDate.toDateString(),
     expiredDays: expiredDays
   }
