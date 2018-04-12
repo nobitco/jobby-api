@@ -27,7 +27,7 @@ const assignment = {
   username: faker.internet.userName(),
   role: roles[idRole],
   avatar: faker.image.avatar(),
-  name: 'informe a',
+  activity: 'informe a',
   deliveryDate: deliveryDate.toDateString(),
   deliveryDays: deliveryDays
 }
@@ -50,7 +50,7 @@ for (let i = 2; i <= nTotal; i++) {
     username: faker.internet.userName(),
     role: roles[idRole],
     avatar: faker.image.avatar(),
-    name: 'Activity ' + faker.random.word(),
+    activity: 'Activity ' + faker.random.word(),
     deliveryDate: deliveryDate.toDateString(),
     deliveryDays: deliveryDays
   }
@@ -80,7 +80,7 @@ const expiredAssignment = {
   username: faker.internet.userName(),
   role: roles[idRole],
   avatar: faker.image.avatar(),
-  name: 'Activity ' + faker.random.word(),
+  activity: 'Activity ' + faker.random.word(),
   expiredDate: expiredDate.toDateString(),
   expiredDays: expiredDays
 }
@@ -103,7 +103,7 @@ for (let i = 2; i <= nTotal; i++) {
     username: faker.internet.userName(),
     role: roles[idRole],
     avatar: faker.image.avatar(),
-    name: 'Activity ' + faker.random.word(),
+    activity: 'Activity ' + faker.random.word(),
     expiredDate: expiredDate.toDateString(),
     expiredDays: expiredDays
   }
