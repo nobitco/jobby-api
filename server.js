@@ -12,6 +12,10 @@ const server = http.createServer(app)
 
 app.use('/api', api)
 
+app.get('/', function (req, res) {
+  res.send('Oh! GET request to API Jobby...');
+})
+
 app.use((err, req, res, next) => {
   debug(`Error: ${err.message}`)
 
