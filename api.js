@@ -20,11 +20,13 @@ api.get('/usuario', (req, res) => {
 
 api.get('/next-assignments', (req, res) => {
   debug('GET next-assignments')
+  res.append('Access-Control-Allow-Origin','*')
   res.send(JSON.stringify(assignmentsFixtures.nextAssignments))
 })
 
 api.get('/expired-assignments', (req, res) => {
   debug('GET expired-assignments')
+  res.append('Access-Control-Allow-Origin','*')
   res.send(JSON.stringify(assignmentsFixtures.expiredAssignments))
 })
 
