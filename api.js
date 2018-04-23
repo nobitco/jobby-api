@@ -4,13 +4,13 @@ const debug = require('debug')('platziverse:api:routes')
 const express = require('express')
 
 const api = express.Router()
-const practicantesFixtures = require('./tests/fixtures/practicantes')
+const novicesFixtures = require('./tests/fixtures/novices')
 const usuariosFixtures = require('./tests/fixtures/usuarios')
 const assignmentsFixtures = require('./tests/fixtures/assignments')
 
-api.get('/practicantes', (req, res) => {
-  debug('get practicantes')
-  res.send(JSON.stringify(practicantesFixtures.all))
+api.get('/novices', (req, res) => {
+  debug('get novices')
+  res.send(JSON.stringify(novicesFixtures.all))
 })
 
 api.get('/usuario', (req, res) => {
