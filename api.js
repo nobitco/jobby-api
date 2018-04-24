@@ -7,10 +7,16 @@ const api = express.Router()
 const novicesFixtures = require('./tests/fixtures/novices')
 const usuariosFixtures = require('./tests/fixtures/usuarios')
 const assignmentsFixtures = require('./tests/fixtures/assignments')
+const tutorsFixtures = require('./tests/fixtures/tutors')
 
 api.get('/students', (req, res) => {
   debug('get students')
   res.send(JSON.stringify(novicesFixtures.all))
+})
+
+api.get('/tutors', (req, res) => {
+  debug('get tutors')
+  res.send(JSON.stringify(tutorsFixtures.all))
 })
 
 api.get('/usuario', (req, res) => {
