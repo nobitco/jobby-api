@@ -29,6 +29,7 @@ function getStudents () {
 }
 
 const company = {
+  username: faker.internet.userName(),
   name: faker.company.companyName(),
   lastname: faker.name.lastName(),
   email: faker.internet.email()
@@ -43,6 +44,7 @@ let listStudents = []
 for (let i = 1; i <= nTotal; i++) {
   listStudents = getStudents()
   companyrm = {
+    username: faker.internet.userName(),
     name: faker.company.companyName(),
     lastname: faker.name.lastName(),
     email: faker.internet.email(),
