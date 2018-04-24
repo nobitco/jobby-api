@@ -8,6 +8,7 @@ const novicesFixtures = require('./tests/fixtures/novices')
 const usuariosFixtures = require('./tests/fixtures/usuarios')
 const assignmentsFixtures = require('./tests/fixtures/assignments')
 const tutorsFixtures = require('./tests/fixtures/tutors')
+const companiesFixtures = require('./tests/fixtures/companies')
 
 api.get('/students', (req, res) => {
   debug('get students')
@@ -17,6 +18,11 @@ api.get('/students', (req, res) => {
 api.get('/tutors', (req, res) => {
   debug('get tutors')
   res.send(JSON.stringify(tutorsFixtures.all))
+})
+
+api.get('/places', (req, res) => {
+  debug('get tutors')
+  res.send(JSON.stringify(companiesFixtures.all))
 })
 
 api.get('/usuario', (req, res) => {
