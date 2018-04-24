@@ -16,7 +16,7 @@ const novice = {
   email: faker.internet.email(),
   state: statePractice[0],
   university: 'icesi',
-  enterprise: 'ABC'
+  place: 'ABC'
 }
 
 let novices = []
@@ -37,7 +37,7 @@ for (let i = 2; i <= nTotal; i++) {
     email: faker.internet.email(),
     state: statePractice[idStatePractice],
     university: universities[idUniversity],
-    enterprise: enterprises[idEnterprise]
+    place: enterprises[idEnterprise]
   }
   novices.push(novicerm)
 }
