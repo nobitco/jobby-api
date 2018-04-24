@@ -8,8 +8,8 @@ const novicesFixtures = require('./tests/fixtures/novices')
 const usuariosFixtures = require('./tests/fixtures/usuarios')
 const assignmentsFixtures = require('./tests/fixtures/assignments')
 
-api.get('/novices', (req, res) => {
-  debug('get novices')
+api.get('/students', (req, res) => {
+  debug('get students')
   res.send(JSON.stringify(novicesFixtures.all))
 })
 
