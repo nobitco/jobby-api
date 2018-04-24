@@ -32,7 +32,9 @@ const tutor = {
   name: faker.name.firstName(),
   lastname: faker.name.lastName(),
   email: faker.internet.email(),
-  university: 'icesi'
+  avatar: faker.image.avatar(),
+  university: 'icesi',
+  role: 'tutor'
 }
 
 let tutors = []
@@ -46,10 +48,13 @@ for (let i = 1; i <= nTotal; i++) {
   idUniversity = getRandomInt(0, 3)
   listStudents = getStudents()
   tutorrm = {
+    username: faker.internet.userName(),
     name: faker.name.firstName(),
     lastname: faker.name.lastName(),
     email: faker.internet.email(),
+    avatar: faker.image.avatar(),
     university: universities[idUniversity],
+    role: 'tutor',
     students: listStudents
   }
   tutors.push(tutorrm)
