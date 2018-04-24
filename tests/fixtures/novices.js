@@ -11,12 +11,16 @@ function getRandomInt (min, max) {
 }
 
 const novice = {
+  username: faker.internet.userName(),
   name: faker.name.firstName(),
   lastname: faker.name.lastName(),
   email: faker.internet.email(),
+  avatar: faker.image.avatar(),
   state: statePractice[0],
   university: 'icesi',
-  place: 'ABC'
+  place: 'ABC',
+  city: faker.address.city(),
+  role: 'student'
 }
 
 let novices = []
@@ -32,12 +36,16 @@ for (let i = 2; i <= nTotal; i++) {
   idEnterprise = getRandomInt(0, 3)
   idStatePractice = getRandomInt(0, 3)
   novicerm = {
+    username: faker.internet.userName(),
     name: faker.name.firstName(),
     lastname: faker.name.lastName(),
     email: faker.internet.email(),
+    avatar: faker.image.avatar(),
     state: statePractice[idStatePractice],
     university: universities[idUniversity],
-    place: enterprises[idEnterprise]
+    place: enterprises[idEnterprise],
+    city: faker.address.city(),
+    role: 'student'
   }
   novices.push(novicerm)
 }
