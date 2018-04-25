@@ -32,7 +32,8 @@ const company = {
   username: faker.internet.userName(),
   name: faker.company.companyName(),
   lastname: faker.name.lastName(),
-  email: faker.internet.email()
+  email: faker.internet.email(),
+  avatar: faker.image.avatar(),
 }
 
 let companies = []
@@ -48,6 +49,7 @@ for (let i = 1; i <= nTotal; i++) {
     name: faker.company.companyName(),
     lastname: faker.name.lastName(),
     email: faker.internet.email(),
+    avatar: faker.image.avatar(),
     students: listStudents
   }
   companies.push(companyrm)
