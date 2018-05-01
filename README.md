@@ -7,6 +7,21 @@ WEB Services para jobby
 
 GET /api/{universidad}/practicante/{cedula-identidad}
 
+#### GET /api/{universidad}/students
+
+Respuesta JSON
+
+* `username` (String) Identificador unico del estudiante
+* `name` (String) Nombres del estudiante
+* `lastname` (String) Apellidos del estudiante
+* `email` (String) Email del estudiante
+* `avatar` (String) Direccion avatar del estudiante
+* `state` (String) Estado del estudiante en el proceso (busqueda, proceso, culminado)
+* `university` (String) Identificador unico de la universidad
+* `place` (String) Identificador unico de la empresa donde realiza práctica
+* `city` (String) Ciudad 
+* `role` (String) Rol del usuario
+
 #### GET /api/{universidad}/next-assignments
 
 Respuesta JSON
