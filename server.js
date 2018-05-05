@@ -35,5 +35,5 @@ process.on('uncaughtException', handleFatalError)
 process.on('unhandledRejection', handleFatalError)
 
 server.listen(port, () => {
-  console.log(`${chalk.green('[platziverse-api]')} server listening on port ${port}`)
+  console.log(`${chalk.green('[jobby-api]')} server listening on port ${port}`)
 })

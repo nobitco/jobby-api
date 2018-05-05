@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "set DEBUG=platziverse:* && nodemon server.js",
+    "start-dev": "set DEBUG=jobby-api:* && nodemon server.js",
     "start": "node server.js",
     "lint": "standard"
   },
