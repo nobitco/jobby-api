@@ -11,6 +11,7 @@ GET /api/{universidad}/practicante/{cedula-identidad}
 
 Respuesta JSON LIST
 
+* `id` (int) Identificador unico del estudiante
 * `username` (String) Identificador unico del estudiante
 * `name` (String) Nombres del estudiante
 * `lastname` (String) Apellidos del estudiante
@@ -26,12 +27,15 @@ Respuesta JSON LIST
 
 Respuesta JSON LIST
 
+* `id` (int) Identificador único del tutor
+* `username` (String) Identificador único del tutor
 * `name` (String) Nombres del tutor
 * `lastname` (String) Apellidos del estudiante
 * `email` (String) Email del estudiante
 * `avatar` (String) Direccion avatar del estudiante
 * `university` (String) Identificador unico de la universidad
 * `role` (String) Rol del usuario
+* `students` (lista) Lista de estudiantes
 
 #### GET /api/{universidad}/next-assignments
 
@@ -69,7 +73,7 @@ Respuesta JSON LIST
 * `email` (String) Email de la empresa
 * `city` (String) Ciudad de la empresa
 * `students` (json list) Practicantes de la empresa
-* `city` (json list) lista de vacantes
+* `jobs` (json list) lista de vacantes
 
 ### POST
 POST /api/{universidad}/practicante
