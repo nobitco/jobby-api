@@ -18,6 +18,7 @@ function getStudents () {
   for (let i = 1; i <= nTotal; i++) {
     idUniversity = getRandomInt(0, 3)
     student = {
+      id: i,
       name: faker.name.firstName(),
       lastname: faker.name.lastName(),
       email: faker.internet.email(),
@@ -48,6 +49,7 @@ for (let i = 1; i <= nTotal; i++) {
   idUniversity = getRandomInt(0, 3)
   listStudents = getStudents()
   tutorrm = {
+    id: i,
     username: faker.internet.userName(),
     name: faker.name.firstName(),
     lastname: faker.name.lastName(),

@@ -18,6 +18,7 @@ function getStudents () {
   for (let i = 1; i <= nTotal; i++) {
     idUniversity = getRandomInt(0, 3)
     student = {
+      id: i,
       name: faker.name.firstName(),
       lastname: faker.name.lastName(),
       email: faker.internet.email(),
@@ -37,6 +38,7 @@ function getJobs () {
   for (let i = 1; i <= nTotal; i++) {
     postTime = new Date(faker.date.past())
     job = {
+      id: i,
       name: faker.name.jobTitle(),
       description: faker.name.jobDescriptor(),
       type: faker.name.jobType(),
@@ -49,6 +51,7 @@ function getJobs () {
 }
 
 const company = {
+  id: 1,
   username: faker.internet.userName(),
   name: faker.company.companyName(),
   lastname: faker.name.lastName(),
@@ -69,6 +72,7 @@ for (let i = 1; i <= nTotal; i++) {
   jobsList = getJobs()
 
   companyrm = {
+    id: 1,
     username: faker.internet.userName(),
     name: faker.company.companyName(),
     lastname: faker.name.lastName(),

@@ -11,6 +11,7 @@ function getRandomInt (min, max) {
 }
 
 const novice = {
+  id: 1,
   username: faker.internet.userName(),
   name: faker.name.firstName(),
   lastname: faker.name.lastName(),
@@ -36,6 +37,7 @@ for (let i = 2; i <= nTotal; i++) {
   idEnterprise = getRandomInt(0, 3)
   idStatePractice = getRandomInt(0, 3)
   novicerm = {
+    id: i - 1,
     username: faker.internet.userName(),
     name: faker.name.firstName(),
     lastname: faker.name.lastName(),
