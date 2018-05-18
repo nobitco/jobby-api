@@ -6,10 +6,14 @@ const chalk = require('chalk')
 const debug = require('debug')('platziverse:api')
 const api = require('./api')
 const asyncify = require('express-asyncify')
+const bodyParser = require('body-parser')
 
 const port = process.env.PORT || 3000
 const app = asyncify(express())
 const server = http.createServer(app)
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extend: true }))
 
 app.use('/api', api)
 
