@@ -4,11 +4,13 @@
   "description": "API servidor",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "chalk": "^2.3.2",
     "debug": "^3.1.0",
     "express": "^4.16.3",
     "express-asyncify": "^1.0.0",
-    "jobby-bdsql": "file:../jobby-bdsql"
+    "jobby-bdsql": "file:../jobby-bdsql",
+    "multer": "^1.3.0"
   },
   "devDependencies": {
     "ava": "^0.25.0",
