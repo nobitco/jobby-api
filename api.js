@@ -5,7 +5,7 @@ const express = require('express')
 
 const api = express.Router()
 const novicesFixtures = require('./tests/fixtures/novices')
-const usuariosFixtures = require('./tests/fixtures/usuarios')
+const usersFixtures = require('./tests/fixtures/users')
 const assignmentsFixtures = require('./tests/fixtures/assignments')
 const tutorsFixtures = require('./tests/fixtures/tutors')
 const companiesFixtures = require('./tests/fixtures/companies')
@@ -28,10 +28,10 @@ api.get('/places', (req, res) => {
   res.send(JSON.stringify(companiesFixtures.all))
 })
 
-api.get('/usuario', (req, res) => {
-  debug('GET usuario')
+api.get('/users', (req, res) => {
+  debug('GET users')
   res.append('Access-Control-Allow-Origin','*')
-  res.send(JSON.stringify(usuariosFixtures.single))
+  res.send(JSON.stringify(usersFixtures.all))
 })
 
 api.get('/next-assignments', (req, res) => {
