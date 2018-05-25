@@ -7,7 +7,7 @@ const debug = require('debug')('platziverse:api')
 const api = require('./api')
 const asyncify = require('express-asyncify')
 
-const port = process.env.PORT || 3000
+const port = process.env.PORTAPI || 3001
 const app = asyncify(express())
 const server = http.createServer(app)
 
