@@ -21,8 +21,11 @@ test.beforeEach(async () => {
     User: UserStub
   }))
 
+  // create stub to each databases function
   UserStub.findAll = sandbox.stub()
   UserStub.findAll.returns(Promise.resolve(userFixtures.all))
+  UserStub.findByUsername = sandbox.stub()
+  UserStub.findByUsername.returns(Promise.resolve(userFixtures.single))
 
   const api = proxyquire('../api', {
     'jobby-bdsql': dbStub
@@ -51,5 +54,18 @@ test.serial.cb('/api/users', t => {
     })
 })
 
+test.serial.cb('/api/user/:username', t => {
+  request(server)
+    .get('/api/user/:username')
+    .expect(200)
+    .expect('Content-Type', /json/)
+    .end((err, res) => {
+      t.falsy(err, 'should not return error')
+      let body = JSON.stringify(res.body)
+      let expected = JSON.stringify(userFixtures.single)
+      t.deepEqual(body, expected, 'response body should be the expected')
+      t.end()
+    })
+})
+
 test.serial.todo('/api/users - not authorized')
-test.serial.todo('/api/user/:username')
