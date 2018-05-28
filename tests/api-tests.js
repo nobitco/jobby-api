@@ -14,18 +14,18 @@ let dbStub = null
 let UserStub = {}
 
 test.beforeEach(async () => {
-  sandbox = sinon.sandbox.create()
+  sandbox = sinon.createSandbox()
 
   dbStub = sandbox.stub()
   dbStub.returns(Promise.resolve({
-    User: UserStub,
+    User: UserStub
   }))
 
   UserStub.findAll = sandbox.stub()
   UserStub.findAll.returns(Promise.resolve(userFixtures.all))
 
   const api = proxyquire('../api', {
-    'jobby-db': dbStub
+    'jobby-bdsql': dbStub
   })
 
   server = proxyquire('../server', {
@@ -34,13 +34,14 @@ test.beforeEach(async () => {
 })
 
 test.afterEach(() => {
-  sandbox && sinon.sandbox.restore()
+  sandbox && sinon.restore()
 })
 
 test.serial.cb('/api/users', t => {
   request(server)
     .get('/api/users')
     .expect(200)
+    .expect('Content-Type', /json/)
     .end((err, res) => {
       t.falsy(err, 'should not return an error')
       let body = JSON.stringify(res.body)

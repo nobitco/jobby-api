@@ -27,7 +27,7 @@ api.use('*', async (req, res, next) => {
 })
 
 api.get('/', function (req, res) {
-  res.send('Hi! you request GET is easy. API Jobby...!');
+  res.send('Hi! you request GET is easy. API Jobby...!')
 })
 api.get('/user/:username', async (req, res, next) => {
   const { username } = req.params
@@ -78,6 +78,6 @@ api.get('/users', async (req, res, next) => {
   }
 
   res.append('Access-Control-Allow-Origin', '*')
-  res.send(JSON.stringify(users))
+  res.send(users)
 })
 module.exports = api
